@@ -1,11 +1,15 @@
 {
-  "name": "hero-sidekick",
+  "name": "hero-sidekick-3",
   "version": "1.0.0",
-  "description": "",
+  "description": "```sh git init npm init -y echo \"node_modules\" >> .gitignore ```",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "db:create": "createdb heroDB",
+    "db:destroy": "dropdb heroDB",
+    "db:init": "psql -f schema.sql heroDB",
+    "db:seed": "psql -f seed.sql heroDB",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +26,13 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidvaughan86/hero-sidekick.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidvaughan86/hero-sidekick/issues"
+  },
+  "homepage": "https://github.com/davidvaughan86/hero-sidekick#readme"
 }
